@@ -10,8 +10,8 @@ const Photo = (props) => {
 const PhotoList = ({ photos }) => {
   return (
     <div>
-      {photos.map((photo) => (
-        <Photo key={photo.id} photo={photo} />
+      {photos.map((photo, idx) => (
+        <Photo key={photo.id, idx} photo={photo} />
       ))}
     </div>
   )
