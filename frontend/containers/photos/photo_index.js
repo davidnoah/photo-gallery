@@ -15,22 +15,26 @@ class PhotoIndex extends React.Component {
     bindAll(this, '_handleChange', '_searchPhotos', '_requestMorePhotos', '_handleKeyPress');
   }
 
+  // Implements a controlled input component, updates component state
   _handleChange(e) {
     let state = {};
     state[e.target.id] = e.target.value;
     this.setState(state);
   }
 
+  // Requests additional photos from the Flickr API
   _requestMorePhotos() {
     this.props.loading();
     this.props.requestMorePhotos(this.state.query, this.props.page + 1);
   }
 
+  // Main search function, calls the fetchPhotos action and renders loader
   _searchPhotos() {
     this.props.loading();
     this.props.fetchPhotos(this.state.query);
   }
 
+  // Ensures that a user can use the enter key when searching
   _handleKeyPress(e) {
     if(e.key == 'Enter') {
       this._searchPhotos();

@@ -1,6 +1,7 @@
 import React from 'react';
 import './photo_list.css';
 
+// Builds the Flickr image url and renders one photo
 const Photo = (props) => {
   const { photo } = props;
   return (
@@ -8,6 +9,7 @@ const Photo = (props) => {
   )
 }
 
+// Iterates through all Flickr data, rendering a photo component for each
 const PhotoList = ({ photos }) => {
   return (
     <div className={'photoListContainer'}>

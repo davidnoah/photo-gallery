@@ -1,6 +1,7 @@
 import React from 'react';
 import './spinner.css';
 
+// A simple spinner
 const Spinner = () => {
   return (
     <div className={"spinner"}>

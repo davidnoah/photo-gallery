@@ -1,6 +1,7 @@
 import React from 'react';
 import './search.css';
 
+// Search bar -- This component renders an input field and button
 const Search = ({ handleChange, searchPhotos, keyPress }) => {
   return (
     <div className={'searchbarContainer'}>
