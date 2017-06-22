@@ -12,7 +12,7 @@ class PhotoIndex extends React.Component {
       query: ''
     };
 
-    bindAll(this, '_handleChange', '_searchPhotos', '_requestMorePhotos');
+    bindAll(this, '_handleChange', '_searchPhotos', '_requestMorePhotos', '_handleKeyPress');
   }
 
   _handleChange(e) {
@@ -31,13 +31,28 @@ class PhotoIndex extends React.Component {
     this.props.fetchPhotos(this.state.query);
   }
 
+  _handleKeyPress(e) {
+    if(e.key == 'Enter') {
+      this._searchPhotos();
+    }
+  }
+
   render() {
-    let _renderWaypoint = (this.props.photos.length > 0) ? (<Waypoint onEnter={this._requestMorePhotos}/>) : (null);
+    let _renderWaypoint = (this.props.photos.length > 0) ? (
+      <Waypoint onEnter={this._requestMorePhotos}/>
+    ) : (
+      null
+    );
+
     let _renderSpinner = (this.props.isLoading) ? (<Spinner />) : (null);
 
     return (
       <div className={'homeContainer'}>
-        <Search handleChange={this._handleChange} searchPhotos={this._searchPhotos} />
+        <Search
+          handleChange={this._handleChange}
+          searchPhotos={this._searchPhotos}
+          keyPress={this._handleKeyPress}
+        />
         <PhotoList photos={this.props.photos} />
         {_renderSpinner}
         {_renderWaypoint}
