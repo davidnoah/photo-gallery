@@ -1,7 +1,9 @@
 import { ajax } from 'jquery';
 
-export const fetchPhotos = () => (
-  ajax({
-    url: `${location.origin}/api/photos`
-  })
-);
+export const fetchPhotos = (query) => {
+  return ajax({
+    url: `${location.origin}/api/photos`,
+    error: (err) => console.log(err),
+    data: {query: query}
+  });
+};

@@ -5,8 +5,7 @@ const PhotosReducer = (state = [], action) => {
 
   switch(action.type) {
     case RECEIVE_PHOTOS:
-      // do something
-      return state;
+      return action.photos;
     default:
       return state;
   }

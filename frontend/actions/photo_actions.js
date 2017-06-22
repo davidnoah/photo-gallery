@@ -4,8 +4,8 @@ import * as APIUtil from '../util/photo_util';
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 
 // Async Actions
-export const fetchPhotos = () => dispatch => {
-  APIUtil.fetchPhotos()
+export const fetchPhotos = (query) => dispatch => {
+  APIUtil.fetchPhotos(query)
     .then((photos) => dispatch(receivePhotos(photos)));
 };
 
