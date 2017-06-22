@@ -15,6 +15,7 @@ const PhotosReducer = (state = initialState, action) => {
       let newState = extend({}, state);
       newState.photos = action.photos;
       newState.isLoading = false;
+      newState.page = 1;
       return newState;
     case RECEIVE_ADDITIONAL_PHOTOS:
       newState = extend({}, state);
