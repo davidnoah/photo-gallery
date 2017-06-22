@@ -3,6 +3,7 @@ import * as APIUtil from '../util/photo_util';
 // Action Constants
 export const RECEIVE_PHOTOS = "RECEIVE_PHOTOS";
 export const RECEIVE_ADDITIONAL_PHOTOS = "RECEIVE_ADDITIONAL_PHOTOS";
+export const LOADING = "LOADING";
 
 // Async Actions
 export const fetchPhotos = (query) => dispatch => (
@@ -24,4 +25,8 @@ export const receivePhotos = (photos) => ({
 export const receiveAdditionalPhotos = (photos) => ({
   type: RECEIVE_ADDITIONAL_PHOTOS,
   photos
+});
+
+export const loading = () => ({
+  type: LOADING
 });

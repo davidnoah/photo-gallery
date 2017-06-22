@@ -4,7 +4,8 @@ import PhotoIndex from './photo_index';
 
 const mapStateToProps = state => ({
   photos: state.photos.photos,
-  page: state.photos.page
+  page: state.photos.page,
+  isLoading: state.photos.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({
