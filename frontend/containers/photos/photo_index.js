@@ -3,6 +3,7 @@ import PhotoList from '../../components/photo_list/photo_list.js';
 import { bindAll } from 'lodash';
 import Waypoint from 'react-waypoint';
 import Spinner from '../../components/spinner/spinner.js';
+import Search from '../../components/search/search.js';
 
 class PhotoIndex extends React.Component {
   constructor(props) {
@@ -36,8 +37,7 @@ class PhotoIndex extends React.Component {
 
     return (
       <div className={'homeContainer'}>
-        <input onChange={this._handleChange} id={'query'} placeholder={'Type in a dope word...'}/>
-        <button onClick={this._searchPhotos}>Search</button>
+        <Search handleChange={this._handleChange} searchPhotos={this._searchPhotos} />
         <PhotoList photos={this.props.photos} />
         {_renderSpinner}
         {_renderWaypoint}

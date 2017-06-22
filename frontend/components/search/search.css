@@ -1,0 +1,32 @@
+.searchInput {
+  height: 18px;
+  font-size: 80%;
+  color: black;
+  padding: 10px 0px 10px 20px;
+  border: 1px solid #2C3E50;
+  box-shadow: inset 0px 0px 3px 0px rgba(73, 143, 225, 0.56);
+  border-radius: 36px;
+  width: 90%;
+  margin-right: 10px;
+}
+
+.searchButton {
+  background: white;
+  border-style: none;
+  font-size: 15px;
+  color: #606060;
+  padding: 0;
+}
+
+.searchButton:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.searchbarContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+}
