@@ -47,6 +47,10 @@ Once the initial search returns photos, a user can scroll down to load more phot
   }
 ```
 
+* `photos` - An array of Flickr photos. Each photo provides a server-id, id, farm-id, and secret. These values can be used to contruct a photo url using this formula: `https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg`
+* `page` - A number that corresponds to the results page the current query is at. This number is passed as a parameter into the Flickr API
+* `isLoading` - A boolean. This value is toggled `true` when an API request is made. Subsequently, rendering a loading spinner on the page 
+
 ---
 ### Optimizations
 
