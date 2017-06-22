@@ -35,6 +35,19 @@ Luckily enough, the Flickr API provides a standard searching endpoint. This API 
 Once the initial search returns photos, a user can scroll down to load more photos of the same text query. This action occurs when a pre-defined pixel or waypoint has been passed whle scrolling. An action is dispatched which ulimately make a request to a new route within the express server /api/photos/:page. A synchronous 'loading' action is also dispatched in order to render a spinning wheel during the API call.
 
 ---
+### State
+
+```js
+  {
+    photos: {
+      photos: [],
+      page: 1
+      isLoading: false
+    }
+  }
+```
+
+---
 ### Optimizations
 
 One concern I have with infinite scroll is the never ending photo creation. Eventually, this will slow down the frontend of the application just due to the number of images rendered. One could implement a FIFO (first in first out) system that would remove extremely old photos from the page. Then implement the same waypoint system while scrolling upward, although this time the application server will pull from a cache instead of the API. Not a perfect solution, but in many cases, it would improve frontend speed.
