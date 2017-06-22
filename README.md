@@ -69,3 +69,5 @@ Also, it will be important to persist scroll location state to localStorage. Fro
 In order to acheive responsiveness, I took advantage of the [CSS column-count](https://www.w3schools.com/cssref/css3_pr_column-count.asp) property. This property is often used when diplaying text in columns similar to a text book. When the user's view port is greater then 1000px, 3 image columns are rendered. This is great because the browser will resize the width of each image column to make it fit without distorting each photo. I've added media querys that change the number of columns to 2 and 1 when the page is less than 1000px and 600px, respectively. 
 
 One issue with rendering photos this way is the infinite scroll implementation. Because the photos are ordered by column, new photos added move or shift the pre-existing photos.
+
+NOTE: I used component based styling. Every component imports a .css file. Webpack then uses the modules `style-loader` and `css-loader` to bundle these stylesheets. I found that easy access to each component's stylesheet speeds up my development time tremendously.
