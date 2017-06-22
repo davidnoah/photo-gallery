@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPhotos, requestMorePhotos } from '../../actions/photo_actions';
+import { fetchPhotos, requestMorePhotos, loading } from '../../actions/photo_actions';
 import PhotoIndex from './photo_index';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchPhotos: (query) => dispatch(fetchPhotos(query)),
-  requestMorePhotos: (query, page) => dispatch(requestMorePhotos(query, page))
+  requestMorePhotos: (query, page) => dispatch(requestMorePhotos(query, page)),
+  loading: () => dispatch(loading())
 });
 
 export default connect(

@@ -1,15 +1,16 @@
 import React from 'react';
+import './photo_list.css';
 
 const Photo = (props) => {
   const { photo } = props;
   return (
-    <img src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
+    <img className={'photo'} src={`https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`} />
   )
 }
 
 const PhotoList = ({ photos }) => {
   return (
-    <div>
+    <div className={'photoListContainer'}>
       {photos.map((photo, idx) => (
         <Photo key={photo.id, idx} photo={photo} />
       ))}
