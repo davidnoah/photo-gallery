@@ -39,6 +39,8 @@ Once the initial search returns photos, a user can scroll down to load more phot
 
 One concern I have with infinite scroll is the never ending photo creation. Eventually, this will slow down the frontend of the application just due to the number of images rendered. One could implement a FIFO (first in first out) system that would remove extremely old photos from the page. Then implement the same waypoint system while scrolling upward, although this time the application server will pull from a cache instead of the API. Not a perfect solution, but in many cases, it would improve frontend speed.
 
+Also, it will be important to persist scroll location state to localStorage. From a UX perspecive, a user will have a much smoother experience if he/she can show up at the same scroll location when using their browser's back button.
+
 ---
 ### Photo
 
