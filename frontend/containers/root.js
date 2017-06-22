@@ -3,10 +3,12 @@ import { Provider } from 'react-redux';
 
 // Components
 import store from '../store.js';
-import PhotoIndex from './photos/photo_index_container';
+import PhotoContainer from './photos/photo_index_container';
 
-export const Root = () => (
+const Root = () => (
   <Provider store={store} >
     <PhotoContainer />
   </Provider>
 );
+
+export default Root;
